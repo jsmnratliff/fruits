@@ -11,21 +11,24 @@ const Fruits = () => {
         }).then((res)=>{
             console.log(res.data);
             setFruits(res.data)
-        })
-    },[])
+        });
+    },[]);
 console.log(fruits);
-  return(
-    <div>Show all fruits here:
-        <ul>
-        {fruits.map((fruit)=>{
-           return <li key={fruit.name}>
-                <p>{fruit.name}</p>
-                <p>{fruit.color}</p>
-                <p>{fruit.readyToEat}</p>
-            </li>
-        })}
-        </ul>
+return (
+    <div>
+      Show all fruits here:
+      <ul>
+        {fruits.map((fruit) => (
+          <li key={fruit.name}>
+            <p>Name: {fruit.name}</p>
+            <p>Color: {fruit.color}</p>
+            <p>Age: {fruit.age}</p> {/* Display the age */}
+            <p>Ready To Eat: {fruit.readyToEat}</p>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
-export default Fruits
+  );
+};
+
+export default Fruits;
